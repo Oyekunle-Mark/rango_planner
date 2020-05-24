@@ -56,22 +56,17 @@ class TasksScreen extends StatelessWidget {
           ),
           Expanded(
             child: Container(
-              padding: EdgeInsets.symmetric(
-                horizontal: 20.0,
-              ),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(20.0),
-                  topRight: Radius.circular(20.0),
+                padding: EdgeInsets.symmetric(
+                  horizontal: 20.0,
                 ),
-              ),
-              child: ListView(
-                children: <Widget>[
-                  TasksList(),
-                ],
-              ),
-            ),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(20.0),
+                    topRight: Radius.circular(20.0),
+                  ),
+                ),
+                child: TasksList()),
           ),
         ],
       ),
@@ -82,7 +77,12 @@ class TasksScreen extends StatelessWidget {
 class TasksList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return TaskTile();
+    return ListView(
+      children: <Widget>[
+        TaskTile(),
+        TaskTile(),
+      ],
+    );
   }
 }
 
