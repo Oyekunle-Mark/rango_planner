@@ -36,6 +36,7 @@ class _TasksScreenState extends State<TasksScreen> {
                         addTaskCallback: (newTaskTitle) {
                           setState(() {
                             tasks.add(Task(name: newTaskTitle));
+                            Navigator.pop(context);
                           });
                         },
                       ),
