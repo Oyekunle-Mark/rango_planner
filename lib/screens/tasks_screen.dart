@@ -13,6 +13,7 @@ class TasksScreen extends StatelessWidget {
           bottom: 30.0,
         ),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             CircleAvatar(
               child: Icon(
@@ -32,6 +33,23 @@ class TasksScreen extends StatelessWidget {
                 color: Colors.white,
                 fontSize: 50.0,
                 fontWeight: FontWeight.w700,
+              ),
+            ),
+            Text(
+              '12 Tasks',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 18.0,
+              ),
+            ),
+            Container(
+              height: 300.0,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(20.0),
+                  topRight: Radius.circular(20.0),
+                ),
               ),
             ),
           ],
