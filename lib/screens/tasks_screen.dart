@@ -68,23 +68,31 @@ class TasksScreen extends StatelessWidget {
               ),
               child: ListView(
                 children: <Widget>[
-                  ListTile(
-                    title: Text('This is a task'),
-                    trailing: Checkbox(
-                      value: false,
-                    ),
-                  ),
-                  ListTile(
-                    title: Text('This is a task'),
-                    trailing: Checkbox(
-                      value: false,
-                    ),
-                  ),
+                  TasksList(),
                 ],
               ),
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class TasksList extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return TaskTile();
+  }
+}
+
+class TaskTile extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      title: Text('This is a task'),
+      trailing: Checkbox(
+        value: false,
       ),
     );
   }
