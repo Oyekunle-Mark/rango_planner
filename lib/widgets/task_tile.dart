@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
 
-class TaskTile extends StatelessWidget {
+class TaskTile extends StatefulWidget {
+  @override
+  _TaskTileState createState() => _TaskTileState();
+}
+
+class _TaskTileState extends State<TaskTile> {
+  bool isChecked = false;
+
   @override
   Widget build(BuildContext context) {
     return ListTile(
@@ -10,23 +17,20 @@ class TaskTile extends StatelessWidget {
   }
 }
 
-class TaskCheckBox extends StatefulWidget {
-  @override
-  _TaskCheckBoxState createState() => _TaskCheckBoxState();
-}
+class TaskCheckBox extends StatelessWidget {
+  final bool checkBoxState;
 
-class _TaskCheckBoxState extends State<TaskCheckBox> {
-  bool isChecked = false;
+  TaskCheckBox(this.checkBoxState);
 
   @override
   Widget build(BuildContext context) {
     return Checkbox(
       activeColor: Colors.lightBlueAccent,
-      value: isChecked,
+      value: checkBoxState,
       onChanged: (newValue) {
-        setState(() {
-          isChecked = newValue;
-        });
+//        setState(() {
+//          checkBoxState = newValue;
+//        });
       },
     );
   }
